@@ -5,7 +5,7 @@ export type Tweet = {
     authorName: string;
     authorHandle: string;
     content: string;
-    image: TweetImage;
+    image?: TweetImage;
     createdAt : string; 
 }; 
 

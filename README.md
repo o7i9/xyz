@@ -13,18 +13,15 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 ### TD 01 - Élements réalisés
 
 1. Modéliser un tweet 
-2. 
-3. 
-4. 
+2. Créer le composant TweetPreview
+3. Afficher conditionnellement l'image
+4. Afficher une liste de tweets
+5. Ajouter "Voir plus / voir moins" 
 
 
 ### TD 01 - Bonus réalisés
 
 - Aucun pour le moment 
-
-### TD 01 - Élements non réalisés
-
-- Tout fait 
 
 ### TD 01 - Difficultés rencontrées + Solutions appliquées
 
@@ -36,6 +33,7 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 - pour convertir la date du format iso 8601 en format lisible (recherche de l'utilisation de la fonction toLocateString)
 - rappel de syntaxe pour les balises html (comme img)
 - je comprends la syntaxe css mais j'ai utilisé l'ia pour qu'elle me guide sur comment afficher une image par ex, avec quelle attribut choisir et les valeurs pour que le rendu soit plus joli
+- explications et syntaxe de la forme fonctionnelle du setter pour la fonctionnalité Voir plus et button 
 
 ## TD 02
 
