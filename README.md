@@ -47,6 +47,10 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 
 ## TD 02
 
+## Notes perso 
+App ne contient plus le contenu d'une page, mais ce qui est commun à toutes les pages comme le header. 
+Le contenu réel de chq page est ajouté à la place de outlet plus tard 
+
 ### TD 02 - Élements réalisés
 
 1. Créer un layout partagé
@@ -63,7 +67,7 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 
 ### TD 02 - Déclaration d'usage de l'IA générative
 
-- **à compléter**
+- comprendre la syntaxe du browserrouter, routes et des routes pour modifier le main 
 
 
 
