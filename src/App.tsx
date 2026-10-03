@@ -1,14 +1,18 @@
 import './App.css'
-import {initialTweets} from "./data/tweets"; 
-import {TweetsList} from "./components/TweetsList"; 
+import {Outlet} from "react-router-dom";  
 
 
 const App = (): React.ReactElement => {
   return(
-    <main>
-      <h1>Fil de tweets</h1>
-      <TweetsList tweets={initialTweets} />
-    </main>
+    <>
+      <header>
+        <h1>XYZ</h1>
+      </header>
+
+      <main>
+        <Outlet/>
+      </main>
+    </>
   ); 
 }; 
 
