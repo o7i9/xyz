@@ -2,10 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import TweetsMasterPage from './pages/TweetsMasterPage'
-import TweetDetailsPage from './pages/TweetDetailsPage'
-import NotFoundPage from './pages/NotFoundPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import TweetsMasterPage from './pages/TweetsMasterPage'; 
+import TweetDetailsPage from './pages/TweetDetailsPage'; 
+import NotFoundPage from './pages/NotFoundPage';  
 
 /*BrowserRouter c'est la boite qui enveloppe toute l'app et qui écoute l'url du navigateur 
 Routes c'est le conteneur qui range toutes les routes et choisit laquelle afficher 

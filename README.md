@@ -68,6 +68,7 @@ Le contenu réel de chq page est ajouté à la place de outlet plus tard
 ### TD 02 - Déclaration d'usage de l'IA générative
 
 - comprendre la syntaxe du browserrouter, routes et des routes pour modifier le main 
+comprendre la syntaxe d'un Link pour les ajouter dans TweetPreview 
 
 
 

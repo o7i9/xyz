@@ -1,5 +1,6 @@
 import type {Tweet} from "../types/Tweet";  
 import {useState} from "react"; 
+import {Link} from "react-router-dom"; 
 
 //un composant react est une fonction qui recoit éventuellement des données et renvoie une description d'interface 
 /*Exemple : (REF DU COURS)
@@ -45,13 +46,18 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement =>
         <article>
             <h3>{tweet.authorName}</h3>
             <p>@{tweet.authorHandle} {new Date(tweet.createdAt).toLocaleString("fr-FR")}</p>
+
+            
             {tweet.image !== undefined && (
-                <img 
-                    className="tweet-image"
-                    src={tweet.image.url}
-                    alt={tweet.image.alt}
-                />
+                <Link to={`/tweets/${tweet.id}`}>
+                    <img 
+                        className="tweet-image"
+                        src={tweet.image.url}
+                        alt={tweet.image.alt}
+                    />
+                </Link>
             )}
+
             <p>{visibleContent}</p> 
             {isLong && (
                 <button
@@ -59,9 +65,10 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement =>
                     onClick={() => setIsExpanded((previous) => !previous)}
                 >
                 {isExpanded ? "Voir moins" : "Voir plus"}
-                </button>
+                </button> 
             )}
             
+            <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
 
         </article>
         //le bouton ne s'affiche que le si le tweet est long 
