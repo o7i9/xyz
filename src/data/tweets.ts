@@ -21,7 +21,7 @@ export const initialTweets: Tweet[] = [
     authorHandle: "chloe",
     content: "Mon coin lecture du dimanche matin. Café, plaid et un bon polar : la combinaison parfaite.",
     image: {
-      url: "https://picsum.photos/seed/reading-nook/600/400",
+      url: "https://i.pinimg.com/736x/aa/36/53/aa36530f1bd586bafd67c35c27cc8bab.jpg",
       alt: "Coin lecture cosy avec un fauteuil, un plaid et une tasse de café près d'une fenêtre",
     },
     createdAt: "2026-07-01T10:30:00.000Z",
@@ -53,7 +53,7 @@ export const initialTweets: Tweet[] = [
     authorHandle: "gabriel",
     content: "Ma pile à lire de l'été est enfin prête. Objectif : 8 romans en deux mois. Qui se joint au défi ?",
     image: {
-      url: "https://picsum.photos/seed/summer-books/600/400",
+      url: "https://i.pinimg.com/736x/c7/f3/05/c7f3051829bfc071f44ce61f2beb9124.jpg",
       alt: "Pile de romans colorés posée sur une table en bois près d'une fenêtre ensoleillée",
     },
     createdAt: "2026-07-01T14:05:00.000Z",

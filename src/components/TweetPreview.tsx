@@ -44,8 +44,7 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement =>
     return (
         <article>
             <h3>{tweet.authorName}</h3>
-            <p>@{tweet.authorHandle}</p>
-            <p>{new Date(tweet.createdAt).toLocaleString("fr-FR")}</p>
+            <p>@{tweet.authorHandle} {new Date(tweet.createdAt).toLocaleString("fr-FR")}</p>
             {tweet.image !== undefined && (
                 <img 
                     className="tweet-image"

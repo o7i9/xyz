@@ -23,9 +23,14 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 
 - Aucun pour le moment 
 
-### TD 01 - Difficultés rencontrées + Solutions appliquées
+### TD 01 - Questions de compréhension 
+1. Trajet d'un tweet depuis App jusqu'à TweetPreview : d'abord les données (initialTweets) sont importées dans App puis dans TweetList, les tweets sont transformés en TweetPreview. 
 
-- **à compléter**
+2. La propriété image est optionnelle image?, si pas d'image alors c'est undefined et la balise img n'est pas affichée. 
+
+3. On a choisi tweet.id comme key car c'est stable alors que si on prend l'index par exemple n'est pas fiable car si on supprime ou ajoute des élements, les index se décalent. 
+
+4. isExpanded doit être un état React ...
 
 ### TD 01 - Déclaration d'usage de l'IA générative
 
@@ -34,28 +39,36 @@ Programmation Web - L3 MIASHS - 2026 / 2027
 - rappel de syntaxe pour les balises html (comme img)
 - je comprends la syntaxe css mais j'ai utilisé l'ia pour qu'elle me guide sur comment afficher une image par ex, avec quelle attribut choisir et les valeurs pour que le rendu soit plus joli
 - explications et syntaxe de la forme fonctionnelle du setter pour la fonctionnalité Voir plus et button 
+- enfin, utilisation de l'ia pour sublimer l'interfaceavec du css
+
+
+
+
 
 ## TD 02
 
 ### TD 02 - Élements réalisés
 
-- **à compléter**
+1. Créer un layout partagé
+2. Déclarer les routes
+3. Créer la page principale
+4. Lier les tweets à leur page de détail
+5. Afficher un tweet et ses réponses
+6. Gérer une route inconnue
 
 ### TD 02 - Bonus réalisés
 
-- **à compléter**
+- Aucun pour le moment 
 
-### TD 02 - Élements non réalisés
-
-- **à compléter**
-
-### TD 02 - Difficultés rencontrées + Solutions appliquées
-
-- **à compléter**
 
 ### TD 02 - Déclaration d'usage de l'IA générative
 
 - **à compléter**
+
+
+
+
+
 
 ## TD 03
 
