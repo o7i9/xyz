@@ -1,5 +1,16 @@
 /* Conteneur principal : centré horizontalement sur la page,
    mais le TEXTE à l'intérieur reste aligné à gauche */
+
+
+:root {
+  --bleu-clair:  #6ec7ea;
+  --bleu-gris:   #51b1ce;
+  --gris-clair:  #e6e6e6;
+  --rose:        #ff4370;
+  --magenta:     #e52e62;
+  --noir:        #000000;
+}
+
 main {
   max-width: 600px;
   margin: 0 auto;
@@ -38,7 +49,7 @@ article > p {
   margin: 0.5rem 0 0 0;
   font-size: 0.95rem;
   line-height: 1.45;
-  color: #c7dde8e0;
+  color: #626769e5;
   text-align: left;   /* ← au cas où */
 }
 
@@ -74,3 +85,143 @@ button:hover {
   text-decoration: underline;
 }
 
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* =========================
+   Base
+   ========================= */
+body {
+  background-color: var(--gris-clair);
+  color: var(--noir);
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+/* =========================
+   Layout
+   ========================= */
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-bottom: 2px solid var(--bleu-clair);
+  background-color: white;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* =========================
+   Titres
+   ========================= */
+h1, h2, h3 {
+  color: var(--noir);
+}
+
+/* =========================
+   Liens
+   ========================= */
+a {
+  color: var(--bleu-gris);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--magenta);
+  text-decoration: underline;
+}
+
+/* =========================
+   Boutons génériques
+   ========================= */
+button {
+  background-color: var(--bleu-clair);
+  color: var(--noir);
+  border: 1px solid var(--bleu-gris);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--bleu-gris);
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Cartes de tweet
+   ========================= */
+article {
+  background-color: white;
+  border: 1px solid var(--gris-clair);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Formulaire
+   ========================= */
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--bleu-gris);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid var(--bleu-clair);
+  border-color: var(--bleu-clair);
+}
+
+.like-button {
+  background-color: white;
+  color: var(--magenta);
+  border: 1px solid var(--magenta);
+}
+
+.like-button:hover:not(:disabled) {
+  background-color: var(--magenta);
+  color: white;
+}
+
+.like-button.liked {
+  background-color: var(--rose);
+  color: white;
+  border-color: var(--rose);
+}
+
+header nav a {
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--bleu-gris);
+  transition: background-color 0.2s;
+}
+
+header nav a:hover {
+  background-color: var(--bleu-clair);
+  color: var(--noir);
+  text-decoration: none;
+}

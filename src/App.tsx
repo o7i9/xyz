@@ -13,7 +13,7 @@ const App = (): React.ReactElement => {
 
 
   const addTweet = (content: string) : void => {
-    const newtTweet: Tweet = {
+    const newTweet: Tweet = {
       id: crypto.randomUUID(), 
       authorName: "Vous", 
       authorHandle: "Vous", 
@@ -50,6 +50,7 @@ const App = (): React.ReactElement => {
   return(
     <>
       <header>
+        <img src="/xyz.png" alt="Logotype XYZ" className="logo" />
         <h1>XYZ</h1>
       </header>
 

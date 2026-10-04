@@ -81,6 +81,7 @@ export const TweetPreview = ({tweet, linkToDetails = true, onToggleLike}: TweetP
             <button
                 type="button"
                 onClick={() => onToggleLike(tweet.id)}
+                className={tweet.likedByMe ? "like-button liked" : "like-button"}
                 >
                 {tweet.likedByMe ? "Je n'aime plus" : "J'aime"} ({tweet.likes})
             </button>
