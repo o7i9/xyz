@@ -87,20 +87,32 @@ et puis les composants comme TweetsmasterPage, NotFoundpage et TweetDetailsPage 
 
 ### TD 03 - Élements réalisés
 
-- **à compléter**
+1. Faire évoluer le modèle 
+2. Remonter l'état dans le layout
+3. Créer un formulaire contrôlé
+4. Publier un tweet
+5. Ajouter et retirer une mention "J'aime"
+6. Personnaliser le titre avec useEffect
+7. Personnaliser l'identité visuelle
+
+### Notes perso 
+Avant ce td, on avait des données statiques (initialTweets), le but de ce td c'est d'avoir des données changeantes et pouvoir publier un tweet, liker un tweet et que les données deviennent modifiables. 
+
+Au lieu que chaque page ait sa copie de initialTweets on met un seul état tweets dans le composant parent de toutes les pages donc App (ancetre commun) et toutes les pages lisent cet état, comme ça pas de désynchronisation et toutes les pages voient les modifications. 
+
+Pour cela on va utiliser useContext et une fct callback que le parent (App) passe à l'enfant pour qu'il appelle quand il en a besoin pour faire des modifs
+
+
 
 ### TD 03 - Bonus réalisés
 
-- **à compléter**
-
-### TD 03 - Élements non réalisés
-
-- **à compléter**
-
-### TD 03 - Difficultés rencontrées + Solutions appliquées
-
-- **à compléter**
+- Aucun pour le moment 
 
 ### TD 03 - Déclaration d'usage de l'IA générative
 
-- **à compléter**
+- 
+
+### Questions de compréhension du TD 03 
+1. 
+2. 
+3. 
