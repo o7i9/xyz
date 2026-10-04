@@ -23,15 +23,17 @@ export const EventsList = ({ events, onToggleRegistration }: EventsListProps): R
 
 type TweetsListProps = {
     tweets: Array<Tweet>; 
+    onToggleLike: (id: string) => void; 
 }; 
 
-export const TweetsList = ({tweets} : TweetsListProps) : React.ReactElement => {
+export const TweetsList = ({tweets, onToggleLike} : TweetsListProps) : React.ReactElement => {
     return (
         <section>
             {tweets.map((tweet) => ( //le map transforme chaque tweet en tweetpreview 
                 <TweetPreview
                 key={tweet.id}
                 tweet={tweet}
+                onToggleLike={onToggleLike}
                 />
             ))}
         </section>

@@ -9,10 +9,10 @@ import { TweetsContext } from "../contexts/TweetsContext";
 const TweetDetailsPage = (): React.ReactElement => {
 
   const { id } = useParams<{ id: string }>(); // pour récup l'id dynamique de l'url tweets/:id
-  const { tweets } = useContext(TweetsContext)!;
+  const { tweets, toggleLike } = useContext(TweetsContext)!;
   
   // recherche du tweet principal, si aucun correspond la méthode renvoie undefined 
-  const tweet = initialTweets.find((tweet) => tweet.id === id); 
+  const tweet = tweets.find((tweet) => tweet.id === id); 
 
   // si aucun tweet correspond à l'id : 
   if (tweet === undefined ) {
@@ -25,19 +25,19 @@ const TweetDetailsPage = (): React.ReactElement => {
   }
 
   //recherche les réponses au tweet d'id concerné 
-  const replies = initialTweets.filter((tweet) => tweet.parentId === id); 
+  const replies = tweets.filter((tweet) => tweet.parentId === id); 
   return (
     <section>
       <h1>Tweet</h1>
 
       {/* Tweet principal : linkToDetail={false} car on est déjà sur sa page */}
-      <TweetPreview tweet={tweet} linkToDetails={false} />
+      <TweetPreview tweet={tweet} linkToDetails={false} onToggleLike={toggleLike}/>
 
       <h2>Réponses</h2>
       {replies.length === 0 ? (
         <p>Aucune réponse pour le moment.</p>
       ) : (
-        <TweetsList tweets={replies} />
+        <TweetsList tweets={replies} onToggleLike={toggleLike}/>
       )}
 
       <Link to="/">Retour au fil</Link>

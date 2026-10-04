@@ -28,8 +28,24 @@ const App = (): React.ReactElement => {
     setTweets((previousTweets) => [newTweet, ...previousTweets]);
   }; 
 
+  const toggleLike = (id: string) : void => {
+    setTweets((previousTweets) => 
+      previousTweets.map((tweet) => {
+        if(tweet.id != id) {
+          return tweet; //pas concerné donc renvoie juste le tweet tel quel 
+        }
+        // sinon 
+        return {
+          ...tweet, 
+          likedByMe: !tweet.likedByMe, 
+          likes: tweet.likedByMe ? tweet.likes - 1 : tweet.likes + 1,
+        }; 
+      }),
+    ); 
+  }; 
+
   // l'objet diffusé 
-  const context: TweetsContextValue = {tweets, addTweet}; 
+  const context: TweetsContextValue = {tweets, addTweet, toggleLike}; 
 
   return(
     <>

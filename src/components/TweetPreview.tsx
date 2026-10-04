@@ -23,6 +23,7 @@ export const EventCard = ({ event }: EventCardProps): ReactElement => {
 type TweetPreviewProps = {
     tweet : Tweet; 
     linkToDetails?: boolean; // quand on est sur la page details du tweet on ne veut pas voir un lien qui référence aux détails du tweet 
+    onToggleLike: (id: string) => void; 
 };
 
 const CONTENT_MAX_LENGTH = 180; 
@@ -34,7 +35,7 @@ toLocateString est une méthode de l'objet Date qui permet de passer à ça "01/
  et fr-FR c'est juste le param pour dire qu'on veut le format fr jour/mois/annee, heure sur 24h */
 
 // l'opérateur && renvoie l'expression de droite si la condition est vraie 
-export const TweetPreview = ({tweet, linkToDetails = true}: TweetPreviewProps) : React.ReactElement => {
+export const TweetPreview = ({tweet, linkToDetails = true, onToggleLike}: TweetPreviewProps) : React.ReactElement => {
     
     //Question 1 : ce tweet est long ? 
     const isLong: boolean = tweet.content.length > CONTENT_MAX_LENGTH; 
@@ -76,6 +77,13 @@ export const TweetPreview = ({tweet, linkToDetails = true}: TweetPreviewProps) :
                 {isExpanded ? "Voir moins" : "Voir plus"}
                 </button> 
             )}
+
+            <button
+                type="button"
+                onClick={() => onToggleLike(tweet.id)}
+                >
+                {tweet.likedByMe ? "Je n'aime plus" : "J'aime"} ({tweet.likes})
+            </button>
 
             {linkToDetails && (
                 <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
