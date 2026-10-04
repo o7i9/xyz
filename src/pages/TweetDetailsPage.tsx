@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import {useParams} from "react-router-dom";
 import {Link} from "react-router-dom"; 
-import {initialTweets} from "../data/tweets";
 import {TweetPreview} from "../components/TweetPreview";
 import {TweetsList} from "../components/TweetsList";
+import { TweetsContext } from "../contexts/TweetsContext";
+
 
 const TweetDetailsPage = (): React.ReactElement => {
 
   const { id } = useParams<{ id: string }>(); // pour récup l'id dynamique de l'url tweets/:id
+  const { tweets } = useContext(TweetsContext)!;
   
   // recherche du tweet principal, si aucun correspond la méthode renvoie undefined 
   const tweet = initialTweets.find((tweet) => tweet.id === id); 
