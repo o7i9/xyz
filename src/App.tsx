@@ -2,7 +2,7 @@ import './App.css'
 import {Outlet} from "react-router-dom";  
 import {useState} from "react"; 
 import {initialTweets} from "./data/tweets"; 
-import {Tweet} from "./types/Tweet"; 
+import type {Tweet} from "./types/Tweet"; 
 import {TweetsContext} from "./contexts/TweetsContext"; 
 import type {TweetsContextValue} from "./contexts/TweetsContext"; 
 
@@ -11,8 +11,25 @@ const App = (): React.ReactElement => {
   //état tweets : source de vérité unique 
   const [tweets, setTweets] = useState<Array<Tweet>>(initialTweets); 
 
+
+  const addTweet = (content: string) : void => {
+    const newtTweet: Tweet = {
+      id: crypto.randomUUID(), 
+      authorName: "Vous", 
+      authorHandle: "Vous", 
+      content: content, 
+      createdAt: new Date().toISOString(), 
+      likes: 0, 
+      likedByMe: false, 
+    }; 
+
+    // création d'un nouveau tableau avec le 1er élément étant le nouveau tweet suivie d'une copie de tous les ancienes tweets avec un spread 
+    //on utilise la forme fonctionelle car la nouvelle valeur de l'état (donc les tweets) dépend de l'ancienne (copie des anciens tweets)
+    setTweets((previousTweets) => [newTweet, ...previousTweets]);
+  }; 
+
   // l'objet diffusé 
-  const context: TweetsContextValue = {tweets}; 
+  const context: TweetsContextValue = {tweets, addTweet}; 
 
   return(
     <>

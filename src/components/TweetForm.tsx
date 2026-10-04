@@ -17,7 +17,7 @@ export const TweetForm = ({onSubmit} : TweetFormProps) : React.ReactElement => {
 
     // retourne une chaine de caractères sans les espaces, tabs, sauts de lignes mais ne modifie pas content pour éviter de publier des tweets vides
     const trimmedContent = content.trim(); 
-    // On vérifie que le contenu n'est pas vide et qu'il ne dépasse pas la limite de caractères fixée 
+    // On vérifie que le contenu n'est pas vide ou qu'il ne dépasse pas la limite de caractères fixée 
     const isSubmitDisabled = trimmedContent.length === 0 || content.length > CONTENT_MAX_LENGTH;
 
     // on reçoit un event (event) de type submit<HTMLFormElement>

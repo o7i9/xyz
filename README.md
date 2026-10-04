@@ -100,7 +100,32 @@ Avant ce td, on avait des données statiques (initialTweets), le but de ce td c'
 
 Au lieu que chaque page ait sa copie de initialTweets on met un seul état tweets dans le composant parent de toutes les pages donc App (ancetre commun) et toutes les pages lisent cet état, comme ça pas de désynchronisation et toutes les pages voient les modifications. 
 
-Pour cela on va utiliser useContext et une fct callback que le parent (App) passe à l'enfant pour qu'il appelle quand il en a besoin pour faire des modifs
+Pour cela on va utiliser useContext et une fct callback que le parent (App) passe à l'enfant pour qu'il appelle quand il en a besoin pour faire des modifs. 
+
+
+Fonctionnement de TweetForm : 
+RENDU INITIAL
+└─ content = "" → bouton grisé
+
+UTILISATEUR TAPE "B"
+└─ onChange → setContent("B") → re-render
+
+UTILISATEUR TAPE "..."
+└─ onChange à chaque lettre → re-render à chaque fois
+
+UTILISATEUR CLIQUE "PUBLIER"
+└─ onSubmit(event)
+   ├─ preventDefault()          (pas de reload)
+   ├─ onSubmit("Bonjour...")    (le parent reçoit le contenu)
+   └─ setContent("")            (champ vidé)
+
+RE-RENDER
+└─ content = "" → bouton grisé à nouveau
+
+Élément	et Son rôle
+- useState (content)	La mémoire du formulaire : ce que l'utilisateur a tapé
+- handleSubmit	Le chef d'orchestre : bloque le reload, prévient le parent, vide le champ
+- onSubmit (prop)	La télécommande vers le parent : « voilà le contenu, à toi de jouer »
 
 
 
@@ -111,7 +136,8 @@ Pour cela on va utiliser useContext et une fct callback que le parent (App) pass
 ### TD 03 - Déclaration d'usage de l'IA générative
 
 - comprendre ce qu'il faut faire dans l'étape 3 pour créer le formulaire contrôlé, notamment la syntaxe des caractéristiques à implémenter dans notre TweetForm 
-- la syntaxe du text area, je ne comprenais pas du tout 
+- la syntaxe du text area, je ne comprenais pas du tout et le fonctionnement de TweetForm avant de pouvoir le coder (notes perso pour la logique)
+-débuggage des erreurs présentes dans la console (erreurs d'innatention pour les imports d etype par exemple)
 
 ### Questions de compréhension du TD 03 
 1. 
