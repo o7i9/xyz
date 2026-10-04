@@ -110,7 +110,8 @@ Pour cela on va utiliser useContext et une fct callback que le parent (App) pass
 
 ### TD 03 - Déclaration d'usage de l'IA générative
 
-- 
+- comprendre ce qu'il faut faire dans l'étape 3 pour créer le formulaire contrôlé, notamment la syntaxe des caractéristiques à implémenter dans notre TweetForm 
+- la syntaxe du text area, je ne comprenais pas du tout 
 
 ### Questions de compréhension du TD 03 
 1. 
