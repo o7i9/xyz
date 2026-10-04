@@ -22,6 +22,7 @@ export const EventCard = ({ event }: EventCardProps): ReactElement => {
 
 type TweetPreviewProps = {
     tweet : Tweet; 
+    linkToDetails?: boolean; // quand on est sur la page details du tweet on ne veut pas voir un lien qui référence aux détails du tweet 
 };
 
 const CONTENT_MAX_LENGTH = 180; 
@@ -33,7 +34,7 @@ toLocateString est une méthode de l'objet Date qui permet de passer à ça "01/
  et fr-FR c'est juste le param pour dire qu'on veut le format fr jour/mois/annee, heure sur 24h */
 
 // l'opérateur && renvoie l'expression de droite si la condition est vraie 
-export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement => {
+export const TweetPreview = ({tweet, linkToDetails = true}: TweetPreviewProps) : React.ReactElement => {
     
     //Question 1 : ce tweet est long ? 
     const isLong: boolean = tweet.content.length > CONTENT_MAX_LENGTH; 
@@ -49,6 +50,7 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement =>
 
             
             {tweet.image !== undefined && (
+                linkToDetails ? (
                 <Link to={`/tweets/${tweet.id}`}>
                     <img 
                         className="tweet-image"
@@ -56,6 +58,13 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement =>
                         alt={tweet.image.alt}
                     />
                 </Link>
+                ) : (
+                    <img 
+                        className="tweet-image"
+                        src={tweet.image.url}
+                        alt={tweet.image.alt}
+                    />
+                )
             )}
 
             <p>{visibleContent}</p> 
@@ -67,8 +76,10 @@ export const TweetPreview = ({tweet}: TweetPreviewProps) : React.ReactElement =>
                 {isExpanded ? "Voir moins" : "Voir plus"}
                 </button> 
             )}
-            
-            <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
+
+            {linkToDetails && (
+                <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
+            )}
 
         </article>
         //le bouton ne s'affiche que le si le tweet est long 

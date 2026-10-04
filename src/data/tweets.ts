@@ -79,4 +79,25 @@ export const initialTweets: Tweet[] = [
     content: "Coup de cœur du mois : « L'Ombre du vent » de Carlos Ruiz Zafón. Une lettre d'amour aux livres et à Barcelone.",
     createdAt: "2026-07-01T18:00:00.000Z",
   },
+
+  // réponse au tweet 1
+  {
+    id: "r1",
+    authorName: "Bob Dupont",
+    authorHandle: "bob",
+    content: "Tellement d'accord ! Ce livre m'a marqué aussi. Le début est un peu déroutant mais une fois lancé, impossible de s'arrêter.",
+    createdAt: "2026-07-01T08:45:00.000Z",
+    parentId: "1",
+  },
+
+  // Réponse au tweet 3 
+  {
+    id: "r2",
+    authorName: "David Lemoine",
+    authorHandle: "david",
+    content: "Ce coin lecture donne trop envie 😍 Tu lis quoi en ce moment ?",
+    createdAt: "2026-07-01T11:00:00.000Z",
+    parentId: "3",
+  },
+
 ];

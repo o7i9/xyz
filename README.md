@@ -69,8 +69,16 @@ Le contenu réel de chq page est ajouté à la place de outlet plus tard
 
 - comprendre la syntaxe du browserrouter, routes et des routes pour modifier le main 
 comprendre la syntaxe d'un Link pour les ajouter dans TweetPreview 
+- Etape 5 : comprendre comment utliser useParams<{ id: string }>() 
 
+### Questions de compréhension TD02
+1. Différence entre Link et <a> : <a> envoie une nouvelle requete HTTP au serveur et recharge entièrement la page  alors que Link intercèpte le clique et laisse React envoyer la route qui convient dans outlet pour que ce soit plus fluide et sans rechargement. 
 
+2. App a le role de layout partagé donc tout ce qui est commun a toutes "nos pages" ici c'était le header et puis le outlet où la page va s'afficher. 
+Outlet c'est l'emplacement ou react injecte le composant 
+et puis les composants comme TweetsmasterPage, NotFoundpage et TweetDetailsPage c'est les contenus variable selon l'url passée et ils sont montrés dans outlet. 
+
+3. Une route inconnue c'est une url qui correspond à aucune route qu'on a crée par ex /livres donc on affiche Page not found. Alors qu'un tweet non trouvé, l'url est valide ex /tweet/87 mais l'id = 87 n'existe pas dans initialTweets donc on affiche "ce tweet 'existe pas". 
 
 
 
