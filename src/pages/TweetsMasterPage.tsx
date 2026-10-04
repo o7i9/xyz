@@ -2,12 +2,16 @@ import { TweetsList } from "../components/TweetsList";
 import {useContext} from "react"; 
 import {TweetsContext} from "../contexts/TweetsContext"; 
 import {TweetForm} from "../components/TweetForm"; 
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 
 const TweetsMasterPage = (): React.ReactElement => {
 
+  useDocumentTitle("Acceuil"); 
+
   const {tweets, addTweet, toggleLike} = useContext(TweetsContext)!; //! dit à ts "je te garants que ce n'est pas undefined"
   // on ne veut avoir que les tweets originaux et pas les réponses 
+
 
   const tweetsOriginaux = tweets.filter((tweet) => tweet.parentId === undefined); 
 

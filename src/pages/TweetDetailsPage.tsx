@@ -4,6 +4,9 @@ import {Link} from "react-router-dom";
 import {TweetPreview} from "../components/TweetPreview";
 import {TweetsList} from "../components/TweetsList";
 import { TweetsContext } from "../contexts/TweetsContext";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+
+
 
 
 const TweetDetailsPage = (): React.ReactElement => {
@@ -13,6 +16,8 @@ const TweetDetailsPage = (): React.ReactElement => {
   
   // recherche du tweet principal, si aucun correspond la méthode renvoie undefined 
   const tweet = tweets.find((tweet) => tweet.id === id); 
+
+  useDocumentTitle(tweet ? `Tweet de ${tweet.authorName}` : "Tweet introuvable");
 
   // si aucun tweet correspond à l'id : 
   if (tweet === undefined ) {

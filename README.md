@@ -137,7 +137,8 @@ RE-RENDER
 
 - comprendre ce qu'il faut faire dans l'étape 3 pour créer le formulaire contrôlé, notamment la syntaxe des caractéristiques à implémenter dans notre TweetForm 
 - la syntaxe du text area, je ne comprenais pas du tout et le fonctionnement de TweetForm avant de pouvoir le coder (notes perso pour la logique)
--débuggage des erreurs présentes dans la console (erreurs d'innatention pour les imports d etype par exemple)
+- débuggage des erreurs présentes dans la console (erreurs d'innatention pour les imports d etype par exemple)
+- comprendre la syntaxe du hook useEffect ppur changer le titre en fct de l'acran qu'on (acceuil, fil de tweet, etc)
 
 ### Questions de compréhension du TD 03 
 1. 
